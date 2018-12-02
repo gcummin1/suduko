@@ -95,11 +95,13 @@ SudokuGrid::~SudokuGrid() {
 }
 // Displays board 
 void SudokuGrid::display() {
+  ofstream myfile;
+  myfile.open("completed_sudoku.txt");
   for (int r = 0; r < 9; r++) {
     for (int c = 0; c < 9; c++) {
-      cout << Grid[r][c].getValue() << " ";
+      myfile<< Grid[r][c].getValue();
     }
-    cout << endl;
+      myfile << "\n";
   }
 }
 // The computer will sove the Sudoku Puzzle 
